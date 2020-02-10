@@ -32,9 +32,7 @@ def matching_score(qterms, doc_tokens, term_weights, avg_doc_len, k = 1.2, b = 0
             numerator = tf * (k + 1) * term_weights[term]
             denom = K + tf
             score_sum += numerator / denom
-    if terms_found > 0:
-        return score_sum / terms_found
-    return None
+    return score_sum
 
 def relevance_weight(word, rel_doc_counts, R, doc_counts, N):
     '''
